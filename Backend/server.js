@@ -9,7 +9,7 @@ const fs = require("fs");
 
 const app = express();
 const Port = 3000;
-process.env.API_KEY = "AIzaSyAIgrC3mZCts_Hng7WwEb9soD8Uksf2VIo";
+process.env.API_KEY = "YOUR API KEY";
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 app.use(bodyParser.json());
