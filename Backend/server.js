@@ -64,7 +64,7 @@ function fileToGenerativePart(filePath, mimeType) {
 app.get("/user/getreport", async (req, res) => {
   try {
     const model = await genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const prompt = "Give me proper information about the given blood report";
+    const prompt = "Give me proper information about the given blood report if the data is besides from blood report only give info that it must be about blood report";
 
     const imageParts = [
       fileToGenerativePart(imagePath, "image/jpeg")
