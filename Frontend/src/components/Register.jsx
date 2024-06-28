@@ -5,8 +5,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Register = () => {
- 
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,17 +15,21 @@ const Register = () => {
   const [success, setSuccess] = useState("");
 
   const validateInput = (name, email, password, gender, age) => {
+    const emailRegex = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$)/
     if (name === "") {
       setInputError("Name field is Blank");
       return false;
     } else if (email === "") {
       setInputError("Email Field Is Blank");
       return false;
+    } else if (!emailRegex.test(email)) {
+      setInputError("Invalid email address. Please enter a valid email.");
+      return false;
     } else if (password === "") {
       setInputError("Password field is Blank");
       return false;
-    } else if (password.length < 3) {
-      setInputError("Password should be 3 characters long");
+    } else if (password.length < 8) {
+      setInputError("Password should be 8 characters long");
       return false;
     } else if (gender === "") {
       setInputError("Gender field is Blank");
@@ -56,7 +58,9 @@ const Register = () => {
         });
         console.log("Response from backend = ", response);
         if (response.data.msg === "Data Repetition") {
-          setCheckDataRepeat("User Already Present, Try again with Different User Name");
+          setCheckDataRepeat(
+            "User Already Present, Try again with Different User Name"
+          );
         } else {
           console.log("Data NOT repeated");
           setSuccess("You've Successfuly Registered");
@@ -91,10 +95,9 @@ const Register = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      >
-
+    >
       <div className="bg-gray-600 bg-opacity-50 px-10 text-center rounded-lg border-4 border-slate-200 shadow-2xl shadow-blue-950 transition ease-in-out delay-150 hover:-translate-y-1 duration-300">
-      <p className="text-green-500 font-bold text-md">{success}</p>
+        <p className="text-green-500 font-bold text-md">{success}</p>
         <h1 className="font-bold mt-4 text-2xl text-gray-100">User Register</h1>
 
         <p className="mt-5 mb-2 font-bold text-white">UserName</p>
@@ -148,19 +151,29 @@ const Register = () => {
               type="submit"
               className="flex m-auto mb-4 border-2 rounded-md px-8 py-2 font-bold bg-green-600 text-white hover:bg-green-900 transition ease-in-out delay-150 hover:-translate-y-1 duration-300"
               onClick={handleSubmit}
-            ><Link to="/login">Go To Login</Link></button>
+            >
+              <Link to="/login">Go To Login</Link>
+            </button>
           </>
         ) : (
           <button
             type="submit"
             className="flex m-auto mb-4 border-2 rounded-md px-8 py-2 font-bold bg-gray-900 text-white hover:bg-gray-800 transition ease-in-out delay-100 hover:scale-125 duration-500"
             onClick={handleSubmit}
-          >Submit</button>
+          >
+            Submit
+          </button>
         )}
-        <p className="font-bold text-md">Already Have an Account <Link to="/login" className="text-blue-600">LogIn </Link>Here</p>
+        <p className="font-bold text-md">
+          Already Have an Account{" "}
+          <Link to="/login" className="text-blue-600">
+            LogIn{" "}
+          </Link>
+          Here
+        </p>
         <p className="text-red-500 font-bold text-md">{inputError}</p>
         <p className="text-red-500 font-bold text-md">{checkDataRepeat}</p>
-      </div>  
+      </div>
     </div>
   );
 };

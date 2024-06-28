@@ -192,9 +192,7 @@ const Main = () => {
                       <p className="list-item list-inside font-bold mt-4 mb-2 text-[#164253] lg:text-xl">
                         Stay Informed:
                       </p>
-                      Access your personalized health dashboard anytime, and
-                      stay updated with regular health tips and advice based on
-                      your report findings.
+                      Access your personalized health dashboard anytime from your profile.
                     </p>
                   </div>
                 </div>

@@ -25,8 +25,8 @@ const Login = () => {
     }  else if (password === "") {
       setInputError("Password field is Blank");
       return false;
-    } else if (password.length < 3) {
-      setInputError("Password should be 3 characters long");
+    } else if (password.length < 8) {
+      setInputError("Password should be 8 characters long");
       return false;
     }
     return true;
@@ -84,6 +84,7 @@ const Login = () => {
       }}
     >
       <div className="bg-gray-600 bg-opacity-50 px-10 text-center rounded-lg border-4 border-slate-200 shadow-2xl shadow-blue-950 transition ease-in-out delay-150 hover:-translate-y-1  duration-300">
+        <p className="text-green-500 font-bold text-md">{checkLogin}</p>
         <h1 className="font-bold mt-4 text-2xl text-gray-100">User Login</h1>
 
         <p className="mt-5 mb-2 font-bold text-white">UserName</p>
@@ -120,6 +121,7 @@ const Login = () => {
         >
           Submit
         </button>
+        <p className="text-red-500 font-bold text-md">{inputError}</p>
           </>
 
         )
