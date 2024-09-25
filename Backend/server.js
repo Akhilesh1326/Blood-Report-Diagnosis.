@@ -6,20 +6,12 @@ const multer = require("multer");
 const path = require("path");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require("fs");
-<<<<<<< HEAD
 require('dotenv').config()
 
 
 const app = express();
 const Port = 3000;
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-=======
-
-const app = express();
-const Port = 3000;
-process.env.API_KEY = "YOUR API KEY";
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
->>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:false}));
