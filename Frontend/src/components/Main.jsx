@@ -1,11 +1,7 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { userNameContext,userAgeContext } from "../context/context";
-<<<<<<< HEAD
 // import headingImg from "../assets/heading_img.jpg";
-=======
-import headingImg from "../assets/heading_img.jpg";
->>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
 
 import email from "../assets/mail.png";
 import phone from "../assets/call.png";
@@ -113,21 +109,13 @@ const Main = () => {
               {nameC?(
                 <>
               <Link to="/bloodreport"><button className=" border-2 border-[#11556E] rounded-bl-xl rounded-tr-xl ml-3  py-2 px-3 text-xl font-bold text-[#11556E] shadow-lg shadow-[#11556E] bg-[#1FC8C6] bg-opacity-25 transition ease-in-out delay-100  hover:scale-110 hover:bg-opacity-90 hover:shadow-lg duration-500">
-<<<<<<< HEAD
                 Check Blood Report
-=======
-                Test Us Now
->>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
               </button></Link>
                 </>
               ):(
                 <>
               <Link to="/register"><button className=" border-2 border-[#11556E] rounded-bl-xl rounded-tr-xl ml-3  py-2 px-3 text-xl font-bold text-[#11556E] shadow-lg shadow-[#11556E] bg-[#1FC8C6] bg-opacity-25 transition ease-in-out delay-100  hover:scale-110 hover:bg-opacity-90 hover:shadow-lg duration-500">
-<<<<<<< HEAD
                 Check Blood Report
-=======
-                Test Us Now
->>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
               </button></Link>
                 </>
               )}

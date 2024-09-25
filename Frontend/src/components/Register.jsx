@@ -1,9 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-<<<<<<< HEAD
 import medImg from "../assets/medImg5.png";
-=======
-import medImg from "E:/Codes/All_Project/Report_Rec/Frontend/src/assets/medImg5.png";
->>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
 import axios from "axios";
 
 import { Link } from "react-router-dom";
@@ -108,11 +104,7 @@ const Register = () => {
         <input
           id="nameInput"
           type="text"
-<<<<<<< HEAD
           value={name} 
-=======
-          value={name}
->>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
           className="rounded-md outline-none border-2 bg-slate-900 text-white px-2 py-1"
           onChange={(e) => setName(e.target.value)}
         />
