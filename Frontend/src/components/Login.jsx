@@ -1,5 +1,9 @@
 import { React, useContext, useState } from "react";
+<<<<<<< HEAD
 import medImg from "../assets/medImg5.png";
+=======
+import medImg from "E:/Codes/All_Project/Report_Rec/Frontend/src/assets/medImg5.png";
+>>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
 import {
   userNameContext, userAgeContext, userEmailContext, userGenderContext, userPasswordContext, userIdContext} from "../context/context";
 import axios from "axios";
@@ -50,8 +54,13 @@ const Login = () => {
         const age = response.data.user_info.age;
         const email = response.data.user_info.email;
         const gender = response.data.user_info.gender;
+<<<<<<< HEAD
         const userId = response.data.user_info.userId;
         console.log(userId)
+=======
+        const userId = response.data.user_info.userRegisterId;
+        // console.log(age)
+>>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
         setAgeC(age);
         setEmailC(email)
         setGenderC(gender)

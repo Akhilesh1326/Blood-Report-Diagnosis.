@@ -4,8 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node server.js",
     "build": "npm install"
+=======
+    "start": "nodemon server.js"
+>>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
   },
   "author": "",
   "license": "ISC",

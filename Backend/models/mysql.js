@@ -3,7 +3,11 @@ const mysql = require("mysql");
 var con = mysql.createConnection({
     host: "localhost",
     user: "root",
+<<<<<<< HEAD
     password: "Mysqlispassword@26"
+=======
+    password: "YOUR SQL PASSWORD"
+>>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
 });
 
 function dbConnect(){
@@ -52,7 +56,11 @@ async function checkLoginWithName(name, password){
     console.log("name - ",name);
     console.log("pass - ",password);
 
+<<<<<<< HEAD
     const sql = `SELECT * FROM Register WHERE name = '${name}' AND password = '${password}'`;
+=======
+    const sql = `SELECT * FROM Register WHERE name = '${name}' AND password = ${password}`;
+>>>>>>> df413913b3aa892e4fa38f828ad0248b69c1b0ed
     const[LoginInfo] = await new Promise((resolve,reject)=>{
         con.query(sql, function(err,res){
             if (err) throw err;
